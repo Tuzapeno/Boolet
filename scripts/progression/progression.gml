@@ -3,15 +3,15 @@
 
 
 // Levels up (or down) a bullet object
-function update_bullet_stats(_bullet_struct, _player_level) {	
+function update_bullet_stats(_bullet_struct) {	
 	with _bullet_struct {
-		stats.damage = stats.base_damage * bullet_progression(level) * level_progression(_player_level)
-		stats.damage_bonus = stats.base_damage_bonus * bullet_progression(level) * level_progression(_player_level)
+		damage = base_damage * (level_up_modifier * global.player_level) * player_level_progression()
+		damage_bonus = base_damage_bonus * (level_up_modifier * global.player_level) * player_level_progression()
 	}
 }
 
 // Levels up (or down) player stats
-function update_player_stats(_player_level) {
+function update_player_stats() {
 		
 	// Initialise the sum of modifiers
 	var bullet_modifiers = 1;
@@ -19,24 +19,23 @@ function update_player_stats(_player_level) {
 	// Go through every bullet damage modifier
 	with oBulletInventory {
 		for (var i = 0; i < ds_list_size(inventory); ++i) {
-			update_bullet_stats(inventory[|i].bullet_info, global.player_level)
-			bullet_modifiers += inventory[|i].bullet_info.stats.damage_bonus
+			update_bullet_stats(inventory[|i].bullet_info)
+			bullet_modifiers += inventory[|i].bullet_info.damage_bonus
 		}
 	}
 	
 	// Update weapon real damage
 	with oCurrentWeapon {
-		real_damage = (weapon.damage + (weapon.damage * bullet_modifiers)) * level_progression(_player_level)
+		var base_leveled = weapon.damage * player_level_progression()
+		var base_modified = base_leveled + (base_leveled * bullet_modifiers)
+		
+		real_damage = base_modified
 	}
 }
 
 
-function level_progression(_level) {
-	return power((1 + _level), 0.5)
-}
-
-function bullet_progression(_level) {
-	return power((0.8 + _level), 0.3)	
+function player_level_progression() {
+	return power((1 + global.player_level), 0.5)
 }
 
 function enemy_level_progression(_level) {

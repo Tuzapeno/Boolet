@@ -77,7 +77,6 @@
     {"name":"sShortScope","order":1,"path":"sprites/sShortScope/sShortScope.yy",},
     {"name":"create_dust","order":1,"path":"scripts/create_dust/create_dust.yy",},
     {"name":"sBulletSpark","order":33,"path":"sprites/sBulletSpark/sBulletSpark.yy",},
-    {"name":"oEnemy","order":2,"path":"objects/oEnemy/oEnemy.yy",},
     {"name":"macros","order":2,"path":"scripts/macros/macros.yy",},
     {"name":"oCurrentWeapon","order":1,"path":"objects/oCurrentWeapon/oCurrentWeapon.yy",},
     {"name":"oStock","order":4,"path":"objects/oStock/oStock.yy",},

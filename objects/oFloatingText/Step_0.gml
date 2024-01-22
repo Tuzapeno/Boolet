@@ -7,7 +7,7 @@ if (alpha <= 0) {
 
 speed = spd
 
-alpha = lerp(alpha, 0, 0.1)
+alpha = lerp(alpha, 0, 0.01)
 
 
 

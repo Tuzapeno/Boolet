@@ -3,7 +3,7 @@
 
 text = ""
 alpha = 1
-spd = 1.5
+spd = 1
 color = c_white
 xrange = 30
 
