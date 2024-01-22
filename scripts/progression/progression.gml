@@ -19,8 +19,8 @@ function update_player_stats() {
 	// Go through every bullet damage modifier
 	with oBulletInventory {
 		for (var i = 0; i < ds_list_size(inventory); ++i) {
-			update_bullet_stats(inventory[|i].bullet_info)
-			bullet_modifiers += inventory[|i].bullet_info.damage_bonus
+			update_bullet_stats(inventory[|i])
+			bullet_modifiers += inventory[|i].damage_bonus
 		}
 	}
 	

@@ -1,20 +1,11 @@
 
-// Functions
-
-function SpecialBullet(_stats, _contact_effect, _effect, _level_up_values) constructor {
-	stats = _stats
-	contact_effect = _contact_effect
-	effect = _effect
-	level_up_values = _level_up_values
-}
-
-
-// Bullets 
+// Bullets
 
 global.fire_bullet = 
 {
 	level: 1,					// Bullet level aka the number of bullets hold in the inventory
-	type: TYPE_FIRE_BULLET,		// Type of bullet (id)
+	btype: TYPE_FIRE_BULLET,	// Type of bullet (id)
+	sprite: sFireBullet,		// Bullet sprite
 	base_damage_bonus: 0.05,	// Base value for the extra bonus to gun's damage
 	base_damage: 2,				// Base value for the bullet's damage
 	damage_bonus: 0.5,			// Real value for bonus applied to gun's damage
@@ -28,7 +19,8 @@ global.fire_bullet =
 global.ice_bullet = 
 {
 	level: 1,
-	type: TYPE_ICE_BULLET,
+	btype: TYPE_ICE_BULLET,
+	sprite: sIceBullet,	
 	base_damage_bonus: 0.05,
 	base_damage: 1,
 	damage_bonus: 0.02,

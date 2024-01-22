@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Bullets",
-    "path": "folders/Objects/Player GUN/Bullets.yy",
+    "name": "Bullet Management",
+    "path": "folders/Objects/Player GUN/Bullet Management.yy",
   },
   "parentObjectId": null,
   "persistent": true,

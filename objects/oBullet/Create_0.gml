@@ -22,8 +22,8 @@ for (var i = 0; i < ds_list_size(inv_obj); ++i) {
 	
 	ds_list_add(damage_array, 
 	{
-		damage: _bullet.bullet_info.damage,
-		bullet_color: _bullet.bullet_info.bullet_color
+		damage: _bullet.damage,
+		bullet_color: _bullet.bullet_color
 	}
 	)
 	

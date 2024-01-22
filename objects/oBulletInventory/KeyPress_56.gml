@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-append_bullet(oFireBullet)
+append_bullet(global.fire_bullet)
 
 
 

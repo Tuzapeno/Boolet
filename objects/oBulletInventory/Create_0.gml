@@ -5,8 +5,8 @@ max_bullets = 10
 
 inventory = ds_list_create()
 
-inventory[| 0] = instance_create_depth(x, y, depth, oFireBullet)
-//inventory[| 1] = instance_create_depth(x, y, depth, oIceBullet)
+inventory[| 0] = global.fire_bullet
+//inventory[| 1] = global.ice_bullet
 
 bullet_count = 1
 
