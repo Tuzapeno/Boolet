@@ -12,7 +12,9 @@ global.fire_bullet =
 	damage: 2,					// Real bullet damage
 	bullet_color: c_orange,		// Bullet color
 	effect: function(level) {}, // Function that triggers effects that the bullet causes on the enviroment
-	contact_effect: function(level) {}, // Function that triggers on-enemy-contact effects
+	contact_effect: function(level) { // Function that triggers on-enemy-contact effects
+		
+	}, 
 	level_up_modifier: 2		// The multiplicative value to upgrade weapon base damage and damage_bonus
 }
 

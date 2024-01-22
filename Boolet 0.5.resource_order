@@ -32,6 +32,7 @@
     {"name":"Stocks","order":4,"path":"folders/Sprites/Weapons/Stocks.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
+    {"name":"Conditions","order":23,"path":"folders/Scripts/Conditions.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sRedBulletCase","order":2,"path":"sprites/sRedBulletCase/sRedBulletCase.yy",},
@@ -101,6 +102,7 @@
     {"name":"sTransitionSprite","order":9,"path":"sprites/sTransitionSprite/sTransitionSprite.yy",},
     {"name":"s_ts_teste","order":4,"path":"sprites/s_ts_teste/s_ts_teste.yy",},
     {"name":"sChest","order":11,"path":"sprites/sChest/sChest.yy",},
+    {"name":"apply_modifiers","order":1,"path":"scripts/apply_modifiers/apply_modifiers.yy",},
     {"name":"sColt","order":1,"path":"sprites/sColt/sColt.yy",},
     {"name":"s_tile_template","order":5,"path":"sprites/s_tile_template/s_tile_template.yy",},
     {"name":"create_money","order":7,"path":"scripts/create_money/create_money.yy",},

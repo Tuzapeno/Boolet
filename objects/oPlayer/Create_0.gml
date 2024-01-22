@@ -2,7 +2,9 @@
 // You can write your code in this editor
 // Definição de variáveis para o inventário
 
-window_set_cursor(cr_none)
+event_inherited()
+
+
 
 var wpmanager = instance_create_depth(x, y, depth, oCurrentWeapon)
 instance_create_depth(x, y, depth, oBulletInventory)
