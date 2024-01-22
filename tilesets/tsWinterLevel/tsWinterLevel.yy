@@ -1,7 +1,7 @@
 {
   "resourceType": "GMTileSet",
   "resourceVersion": "1.0",
-  "name": "tsTinyDungeon",
+  "name": "tsWinterLevel",
   "autoTileSets": [],
   "macroPageTiles": {
     "SerialiseHeight": 0,

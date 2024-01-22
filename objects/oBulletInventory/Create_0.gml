@@ -8,6 +8,7 @@ inventory = ds_list_create()
 inventory[| 0] = instance_create_depth(x, y, depth, oFireBullet)
 //inventory[| 1] = instance_create_depth(x, y, depth, oIceBullet)
 
+bullet_count = 1
 
 
 

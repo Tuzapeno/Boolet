@@ -17,7 +17,7 @@ global.fire_bullet =
 	type: TYPE_FIRE_BULLET,		// Type of bullet (id)
 	base_damage_bonus: 0.05,	// Base value for the extra bonus to gun's damage
 	base_damage: 2,				// Base value for the bullet's damage
-	damage_bonus: 0.05,			// Real value for bonus applied to gun's damage
+	damage_bonus: 0.5,			// Real value for bonus applied to gun's damage
 	damage: 2,					// Real bullet damage
 	bullet_color: c_orange,		// Bullet color
 	effect: function(level) {}, // Function that triggers effects that the bullet causes on the enviroment
@@ -35,5 +35,6 @@ global.ice_bullet =
 	damage: 2,
 	bullet_color: c_aqua,
 	effect: function(_level) {},
-	contact_effect: function(_level){}
+	contact_effect: function(_level){},
+	level_up_modifier: 2
 }

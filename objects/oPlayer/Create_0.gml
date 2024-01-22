@@ -43,7 +43,6 @@ immunity_frames_value = 60
 
 hp = 10
 
-
 #region functions
 
 
