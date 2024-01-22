@@ -71,12 +71,14 @@ clear_around(initial_x, initial_y)
 if (instance_exists(oPlayer)) {
 	oPlayer.x = initial_x * TILESIZE
 	oPlayer.y = initial_y * TILESIZE
-	if (!instance_exists(oCamera)) {
-		instance_create_depth(x, y, depth, oCamera)	
-	}
+	
 }
 else {
 	instance_create_layer(initial_x*TILESIZE, initial_y*TILESIZE, "Instances", oPlayer)
+}
+
+if (!instance_exists(oCamera)) {
+	instance_create_depth(x, y, depth, oCamera)	
 }
 
 #region add_instances

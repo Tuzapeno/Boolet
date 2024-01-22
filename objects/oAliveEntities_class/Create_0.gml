@@ -24,21 +24,39 @@ enum CONDITION {
 // array for our effects
 conditions = []
 
-// iterate through every condition and apply it to the Entity
-/*
-	for every condition
-		if elapsed_time % tickrate == 0
-			apply_effect
-			elapsed_time = 0
-			duration--;
-		else
-			elapsed_time++
-		
-		if duration <= 0
-			post_effect
-			remove condition
 
-*/
+
+// modifiers will alter values (increase or decrease)
+// effects will activate special scenarios like temporary god mode, 1 damage shield...
+
+
+// list of modifiers
+
+	// Entity
+	max_health_modifiers = []
+	speed_modifiers = []
+	
+	// Weapon
+	accuracy_modifiers = []
+	damage_modifiers = []
+	firerate_modifiers = []
+	bullet_range_modifiers = []
+
+
+// list of Entity variables
+
+	// Base values
+	base_max_hp = 0
+	base_spd = 0
+	base_damage = 0
+	
+	// Values
+	max_hp = 0
+	current_hp = 0
+	spd = 0
+
+
+
 
 
 

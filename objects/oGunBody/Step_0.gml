@@ -3,11 +3,6 @@
 
 if !instance_exists(oCurrentWeapon) { exit }
 
-sight = oSight
-stock = oStock
-foregrip = oForegrip
-laser = oLaser
-
 x = oCurrentWeapon.x
 y = oCurrentWeapon.y
 

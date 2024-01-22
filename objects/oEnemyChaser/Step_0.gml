@@ -4,7 +4,9 @@
 flash_alpha = lerp(flash_alpha, 0, 0.1)
 var _dt = delta_time / 1000000
 
-player_in_range = collision_circle(x, y, detect_radius, oPlayer, false, false)
+player = oPlayer
+
+player_in_range = collision_circle(x, y, detect_radius, player, false, false)
 
 if ( hp <= 0 && state != CHASER.DEAD ) {
 	sprite_index = sChaserDeath
@@ -21,10 +23,10 @@ switch ( state ) {
 		
 	case CHASER.FOLLOWING:
 		spd = lerp(spd, spd_max, 0.1)
-		if (instance_exists(oPlayer)) {
-			dir = point_direction(x, y, oPlayer.x, oPlayer.y)
-			mp_potential_step_object(oPlayer.x, oPlayer.y, spd * _dt, oSolid)
-			if (place_meeting(x, y, oPlayer)) {
+		if (instance_exists(player)) {
+			dir = point_direction(x, y, player.x, player.y)
+			mp_potential_step_object(player.x, player.y, spd * _dt, oSolid)
+			if (place_meeting(x, y, player)) {
 				state = CHASER.PLAYER_CONTACT	
 			}
 		}

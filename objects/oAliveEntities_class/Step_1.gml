@@ -1,6 +1,8 @@
 /// @description Apply all range of conditions
 // You can write your code in this editor
 
+
+// Apply conditions
 for (var i = array_length(conditions) - 1; i > -1 ; --i) {
     var condition = conditions[i];
 	var elapsed_time = condition[CONDITION.ELAPSED_TIME]
@@ -22,9 +24,11 @@ for (var i = array_length(conditions) - 1; i > -1 ; --i) {
 	}
 }
 
+// Apply modifiers
 
-
-
+max_hp = apply_modifiers(base_max_hp, max_health_modifiers)
+spd = apply_modifiers(base_spd, speed_modifiers)
+damage = apply_modifiers(base_damage, damage_modifiers)
 
 
 

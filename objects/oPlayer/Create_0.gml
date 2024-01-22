@@ -4,8 +4,6 @@
 
 event_inherited()
 
-
-
 var wpmanager = instance_create_depth(x, y, depth, oCurrentWeapon)
 instance_create_depth(x, y, depth, oBulletInventory)
 
@@ -14,8 +12,6 @@ instance_create_depth(x, y, depth, oColt)
 instance_create_depth(x, y, depth, oShotgun)
 instance_create_depth(x, y, depth, oSmg)
 instance_create_depth(x, y, depth, oMinigun)
-
-
 
 inventory = array_create(2);
 inventory[0] = global.weapons.guns.ak47;
@@ -31,8 +27,6 @@ looking_quadrant = 0
 hsp = 0
 vsp = 0
 
-spd = 150
-
 hforce = 0
 vforce = 0
 
@@ -43,7 +37,12 @@ invincibility = false
 immunity_frames = 60
 immunity_frames_value = 60
 
-hp = 10
+// Base stats
+base_spd = 150
+base_hp = 10
+base_max_hp = 10
+current_hp = base_max_hp
+
 
 #region functions
 

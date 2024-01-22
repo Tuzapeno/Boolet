@@ -11,5 +11,3 @@ if instance_exists(oCurrentWeapon) {
 		other.sprite_index = weapon.sprite
 	}
 }
-
-sight = noone

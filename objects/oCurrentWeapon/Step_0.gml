@@ -4,7 +4,7 @@ if ( weapon == noone ) { exit }
 
 #region Reset position & angle
 
-facing_up = oPlayer.looking_quadrant == 1
+facing_up = player.looking_quadrant == 1
 
 //sprite_index = weapon.sprite;
 
@@ -76,7 +76,6 @@ if instance_exists(oCamera) {
 }
 
 // Stocks
-real_innaccuracy = weapon.inaccuracy
 with stock {
 	//other.real_innaccuracy = max(0, other.weapon.inaccuracy - get_accuracy())
 	other.real_kick = max(0, other.weapon.kick - get_kick())

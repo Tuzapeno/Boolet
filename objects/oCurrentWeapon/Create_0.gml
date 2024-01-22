@@ -6,8 +6,9 @@ knockback_angle = 0
 weapon_hold_y_offset = 10
 weapon_hold_x_offset = 10
 
-ox = oPlayer.x + weapon_hold_x_offset
-oy = oPlayer.y + weapon_hold_y_offset
+player = oPlayer
+ox = player.x + weapon_hold_x_offset
+oy = player.y + weapon_hold_y_offset
 
 weapon = global.weapons.guns.ak47
 
@@ -23,16 +24,23 @@ real_kick = 0
 real_damage = weapon.damage
 
 // Create weapon attachment parts
-instance_create_depth(x, y, depth, oGunBody)
-instance_create_depth(x, y, depth+1, oSight)
-instance_create_depth(x, y, depth+1, oStock)
-instance_create_depth(x, y, depth+1, oForegrip)
-instance_create_depth(x, y, depth+1, oLaser)
 
-sight = oSight
-stock = oStock
-foregrip = oForegrip
-laser = oLaser
+var _sight = instance_create_depth(x, y, depth+1, oSight)
+var _stock = instance_create_depth(x, y, depth+1, oStock)
+var _foregrip = instance_create_depth(x, y, depth+1, oForegrip)
+var _laser = instance_create_depth(x, y, depth+1, oLaser)
+
+instance_create_depth(x, y, depth, oGunBody, {
+	sight: _sight,
+	stock: _stock,
+	foregrip: _foregrip,
+	laser: _laser
+})
+
+sight = _sight
+stock = _stock
+foregrip = _foregrip
+laser = _laser
 
 
 
