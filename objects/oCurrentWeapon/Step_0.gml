@@ -2,6 +2,11 @@
 
 if ( weapon == noone ) { exit }
 
+depth = oPlayer.depth - 1;
+
+x = oPlayer.x + lengthdir_x(5, mouse_angle);
+y = oPlayer.y + lengthdir_y(5, mouse_angle);
+
 #region Reset position & angle
 
 //sprite_index = weapon.sprite;

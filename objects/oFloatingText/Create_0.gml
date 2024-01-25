@@ -4,11 +4,11 @@
 text = ""
 spd = 1
 color = c_white
-xrange = 30
+xrange = 10
 
-lifespan = 80
+lifespan = 30
 
 x += random_range(-xrange, xrange)
 
-direction = 90 + random_range(-35, 35)
+direction = 90
 
