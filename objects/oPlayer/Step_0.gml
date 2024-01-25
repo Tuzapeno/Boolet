@@ -45,9 +45,8 @@ if ( place_meeting(x, y + vsp, oSolid) ) {
 }
 #endregion
 
-looking_direction = point_direction(x, y, mouse_x, mouse_y)
-looking_quadrant = round(looking_direction / 90)
-handle_mouse_look(looking_quadrant)
+
+mouse_direction = point_direction(x, y, mouse_x, mouse_y);
 
 x += hsp 
 y += vsp 
@@ -59,3 +58,13 @@ if ( immunity_frames > 0 ) immunity_frames--;
 else { invincibility = false }
 
 depth = -y
+
+// Animations 
+if hsp != 0 || vsp != 0 {
+	sprite_index = sPlayerWalk;
+}
+else {
+	sprite_index = sPlayerIdle;	
+}
+
+image_xscale = mouse_x > x ? 1 : -1

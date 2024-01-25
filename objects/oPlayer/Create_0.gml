@@ -4,6 +4,14 @@
 
 event_inherited()
 
+enum PLAYER_DIRECTION {
+	RIGHT,
+	TOP,
+	LEFT,
+	DOWN
+}
+
+
 var wpmanager = instance_create_depth(x, y, depth, oCurrentWeapon)
 
 instance_create_depth(x, y, depth, oAK47)
@@ -20,12 +28,12 @@ current_weapon_index = 0;
 wpmanager.weapon = inventory[0]
 
 // Character variables
-image_speed = 0
-looking_direction = 0
-looking_quadrant = 0
+image_speed = 0.5
 hsp = 0
 vsp = 0
 spd = 150
+mouse_direction = 0
+facing_direction = 0
 
 hforce = 0
 vforce = 0
@@ -45,26 +53,6 @@ current_hp = base_max_hp
 
 
 #region functions
-
-
-function handle_mouse_look(_angle) {
-	if (_angle == 0) {
-		image_index = 2
-		image_xscale = 1
-	}
-	else if ( _angle == 1 ) {
-		image_index = 4
-		image_xscale = 1
-	}
-	else if ( _angle == 2 ) {
-		image_index = 2
-		image_xscale = -1
-	}
-	else if ( _angle == 3 ) {
-		image_index = 0
-		image_xscale = -1
-	}
-}
 
 function next_weapon() {
     current_weapon_index = (current_weapon_index + 1) % 2;

@@ -4,8 +4,6 @@ if ( weapon == noone ) { exit }
 
 #region Reset position & angle
 
-facing_up = player.looking_quadrant == 1
-
 //sprite_index = weapon.sprite;
 
 if mouse_x > x image_yscale = 1;
