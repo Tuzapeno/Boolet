@@ -5,7 +5,6 @@
 event_inherited()
 
 var wpmanager = instance_create_depth(x, y, depth, oCurrentWeapon)
-instance_create_depth(x, y, depth, oBulletInventory)
 
 instance_create_depth(x, y, depth, oAK47)
 instance_create_depth(x, y, depth, oColt)
@@ -26,6 +25,7 @@ looking_direction = 0
 looking_quadrant = 0
 hsp = 0
 vsp = 0
+spd = 150
 
 hforce = 0
 vforce = 0

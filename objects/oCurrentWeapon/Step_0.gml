@@ -26,9 +26,6 @@ y = lerp(y, oy, 0.05)
 #region Shooting
 
 var _shoot = weapon.fullauto ? mouse_check_button(mb_left) : mouse_check_button_pressed(mb_left);
-var _ammo_change = keyboard_check_pressed(vk_shift)
-
-if _ammo_change { bullet_index = (bullet_index + 1) % array_length(weapon.ammo) }
 
 var _ammo = weapon.ammo[bullet_index]
 
@@ -62,27 +59,6 @@ if !mouse_check_button(mb_left) {
 		_ammo.firerate,
 		_ammo.rate_start, 
 		_ammo.rate_mult);
-}
-
-#endregion
-
-#region Apply attachments bonus
-
-// Scopes
-if instance_exists(oCamera) {
-	with sight {
-		oCamera.weapon_range = get_distance()
-	}
-}
-
-// Stocks
-with stock {
-	//other.real_innaccuracy = max(0, other.weapon.inaccuracy - get_accuracy())
-	other.real_kick = max(0, other.weapon.kick - get_kick())
-}
-
-with foregrip {
-	other.real_innaccuracy = max(0, other.weapon.inaccuracy - get_accuracy())
 }
 
 #endregion

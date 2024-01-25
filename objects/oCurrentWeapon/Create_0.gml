@@ -23,25 +23,6 @@ real_kick = 0
 
 real_damage = weapon.damage
 
-// Create weapon attachment parts
-
-var _sight = instance_create_depth(x, y, depth+1, oSight)
-var _stock = instance_create_depth(x, y, depth+1, oStock)
-var _foregrip = instance_create_depth(x, y, depth+1, oForegrip)
-var _laser = instance_create_depth(x, y, depth+1, oLaser)
-
-instance_create_depth(x, y, depth, oGunBody, {
-	sight: _sight,
-	stock: _stock,
-	foregrip: _foregrip,
-	laser: _laser
-})
-
-sight = _sight
-stock = _stock
-foregrip = _foregrip
-laser = _laser
-
 
 
 

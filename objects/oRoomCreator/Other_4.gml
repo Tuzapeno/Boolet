@@ -28,11 +28,9 @@ while(global.filled_tiles < 400 ) {
 		if (chance(t90)) { walker_list[|i].walk_direction += 90 }
 		// turn 90degrees counterclock
 		else if (chance(tc90)) { walker_list[|i].walk_direction += -90 }
-		// turn 180degrees (and spawn a chest)
+		// turn 180degrees 
 		else if (chance(t180)) { 
 			walker_list[|i].walk_direction += 180;
-			instance_create_layer(walker_list[|i].wx*TILESIZE+HALFTILE, walker_list[|i].wy*TILESIZE+HALFTILE, 
-			"Instances", oWoodChest)
 		}
 	}
 	
@@ -131,39 +129,5 @@ for( var _x = 0; _x < global.map_width_t; _x++ ) {
 	
 }
 #endregion
-
-
-// Clean up chests
-var distances = ds_list_create();
-
-var count = instance_number(oWoodChest);
-var farthestDistance = 0;
-var farthestChest;
-
-for (var i = 0; i < count; ++i) {
-    var chest = instance_find(oWoodChest, i);
-    var distance = point_distance(chest.x, chest.y, oPlayer.x, oPlayer.y);
-    var chestData = ds_map_create();
-    ds_map_add(chestData, "instance", chest);
-    ds_map_add(chestData, "distance", distance);
-    ds_list_add(distances, chestData);
-
-    if (distance > farthestDistance) {
-        farthestDistance = distance;
-        farthestChest = chest;
-    }
-}
-
-for (var i = 0; i < ds_list_size(distances); ++i) {
-    var data = ds_list_find_value(distances, i);
-    var instance = ds_map_find_value(data, "instance");
-    if (instance != farthestChest) {
-        instance_destroy(instance);
-    }
-    ds_map_destroy(data);
-}
-
-ds_list_destroy(distances);
-
 
 global.game_started = true

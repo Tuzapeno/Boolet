@@ -7,26 +7,11 @@ last_collision = -1
 
 damage_array = ds_list_create()
 
-var inv_obj = oBulletInventory.inventory
-
 // Add weapon base damage
 ds_list_add(damage_array, 
 {
 	damage: weapon_damage,
 	bullet_color: c_white
 })
-
-// Add Bullets damage
-for (var i = 0; i < ds_list_size(inv_obj); ++i) {
-	var _bullet = inv_obj[| i]
-	
-	ds_list_add(damage_array, 
-	{
-		damage: _bullet.damage,
-		bullet_color: _bullet.bullet_color
-	}
-	)
-	
-}
 
 

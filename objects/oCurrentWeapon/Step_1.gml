@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description
 
 x = oPlayer.x + lengthdir_x(weapon_hold_x_offset, mouse_angle)
 y = oPlayer.y + weapon_hold_y_offset
