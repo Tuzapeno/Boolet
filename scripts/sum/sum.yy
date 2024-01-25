@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "utilities",
-    "path": "folders/Scripts/utilities.yy",
+    "name": "map_generation",
+    "path": "folders/Scripts/map_generation.yy",
   },
 }

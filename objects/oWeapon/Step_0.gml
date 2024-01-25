@@ -1,43 +1,69 @@
-/// @description Insert description here
-// You can write your code in this editor
+///@desc moving & shooting
 
+if ( weapon == noone ) { exit }
 
-player = instance_place(x, y, oPlayer)
+x = oPlayer.x + lengthdir_x(10, mouse_angle);
+y = oPlayer.y + lengthdir_y(10, mouse_angle);
 
-if (place_meeting(x, y, oWeapon)) {
-	var dir = random(360)
-	hsp += lengthdir_x(5, dir) 
-	vsp += lengthdir_y(5, dir) 
-}
+#region Reset position & angle
 
+//sprite_index = weapon.sprite;
 
-if ( player != noone && keyboard_check_pressed(ord("E")) ) {
-	with ( oPlayer ) {
-		switch_weapon(other.stats)
-	}
-	instance_destroy()
-}
+if mouse_x > x image_yscale = 1;
+else image_yscale = -1;
 
+mouse_angle -= angle_difference(mouse_angle, point_direction(x, y, mouse_x, mouse_y)) * 0.3;
+knockback_angle -= angle_difference(knockback_angle, 0) * 0.05;
 
-#region Collision
-// Horizontal Collision
-if ( place_meeting(x + hsp, y, oSolid) ) {
-  while( !place_meeting(x + sign(hsp), y, oSolid) ) {
-    x += sign(hsp)
-  }
-  hsp = 0
-}
-// Vertical Collision
-if ( place_meeting(x, y + vsp, oSolid) ) {
-  while( !place_meeting(x, y + sign(vsp), oSolid) ) {
-    y += sign(vsp)
-  }
-  vsp= 0
-}
+image_angle = mouse_angle + knockback_angle
+
+// Lerp
+
+x = lerp(x, ox, 0.05)
+y = lerp(y, oy, 0.05)
+
 #endregion
 
-x += hsp
-y += vsp
+#region Shooting
 
-hsp = lerp(hsp, 0, 0.3)
-vsp = lerp(vsp, 0, 0.3)
+var _shoot = weapon.fullauto ? mouse_check_button(mb_left) : mouse_check_button_pressed(mb_left);
+
+if player.state == PLAYER.ROLLING {
+	_shoot = false;	
+}
+
+var _ammo = weapon.ammo[bullet_index]
+
+if canshoot > 0 canshoot--;
+else if _shoot
+{
+	// Reset firerate
+	canshoot = _ammo.firerate;
+	
+	//screen_shake(weapon.kick, 10)
+	
+	// Lerp firerate to end firerate while shooting
+	
+	_ammo.firerate = lerp(
+		_ammo.firerate,
+		_ammo.rate_end, 
+		_ammo.rate_mult);
+		
+	Shoot();
+	
+	var _delay = weapon.burst_delay;
+	repeat( weapon.burst_number - 1 ) {
+		call_later(_delay, time_source_units_frames, Shoot);
+		_delay += weapon.burst_delay
+	}
+	
+}
+
+if !mouse_check_button(mb_left) {
+	_ammo.firerate = lerp(
+		_ammo.firerate,
+		_ammo.rate_start, 
+		_ammo.rate_mult);
+}
+
+#endregion

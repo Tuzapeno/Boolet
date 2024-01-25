@@ -25,7 +25,7 @@ function update_player_stats() {
 	}
 	
 	// Update weapon real damage
-	with oCurrentWeapon {
+	with oWeapon {
 		var base_leveled = weapon.damage * player_level_progression()
 		var base_modified = base_leveled + (base_leveled * bullet_modifiers)
 		

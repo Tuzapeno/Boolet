@@ -7,9 +7,7 @@ if ( ds_list_find_index(collided_instances, other.id) == -1 ) {
 	last_collision = other.collision_id
 	other.flash_alpha = 1
 	
-	with other {
-		apply_damage(other.damage_array)	
-	}
+	apply_damage(other, damage_array)	
 }
 
 destroy = true

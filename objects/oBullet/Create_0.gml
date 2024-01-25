@@ -5,13 +5,13 @@ destroy = false
 collided_instances = ds_list_create()
 last_collision = -1
 
-damage_array = ds_list_create()
+damage_array = []
 
 // Add weapon base damage
-ds_list_add(damage_array, 
+array_push(damage_array, 
 {
 	damage: weapon_damage,
-	bullet_color: c_white
+	damage_color: c_white
 })
 
 

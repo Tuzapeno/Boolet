@@ -43,6 +43,7 @@ switch ( state ) {
 		spd = 0
 		apply_force(random_range(-120, -121), dir)
 		state = CHASER.RECOVERY
+		apply_damage(player, [{damage: contact_damage, damage_color: c_yellow}]);
 		break
 		
 	case CHASER.RECOVERY:

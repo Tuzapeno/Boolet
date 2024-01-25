@@ -4,15 +4,16 @@
 
 event_inherited()
 
-enum PLAYER_DIRECTION {
-	RIGHT,
-	TOP,
-	LEFT,
-	DOWN
+enum PLAYER {
+	IDLE,
+	MOVING,
+	ROLLING,
+	HIT
 }
 
+state = PLAYER.IDLE;
 
-var wpmanager = instance_create_depth(x, y, depth, oCurrentWeapon)
+var wpmanager = instance_create_depth(x, y, depth, oWeapon)
 
 instance_create_depth(x, y, depth, oAK47)
 instance_create_depth(x, y, depth, oColt)
@@ -28,35 +29,36 @@ current_weapon_index = 0;
 wpmanager.weapon = inventory[0]
 
 // Character variables
-image_speed = 0.5
-hsp = 0
-vsp = 0
-spd = 150
-mouse_direction = 0
-facing_direction = 0
+image_speed = 0.3;
+hsp = 0;
+vsp = 0;
+spd = 150;
+mouse_direction = 0;
+player_direction = 0;
+dt = 0;
 
-hforce = 0
-vforce = 0
 
-money = 0
-money_grab_radius = 50
+hforce = 0;
+vforce = 0;
 
-invincibility = false
-immunity_frames = 60
-immunity_frames_value = 60
+money = 0;
+money_grab_radius = 50;
 
-// Base stats
-base_spd = 150
-base_hp = 10
-base_max_hp = 10
-current_hp = base_max_hp
+immunity = false;
+immunity_frames = 30;
+immunity_frames_value = 30;
 
+dash_spd = 0;
+dash_time = immunity_frames;
+
+max_hp = 10;
+hp = max_hp;
 
 #region functions
 
 function next_weapon() {
     current_weapon_index = (current_weapon_index + 1) % 2;
-    oCurrentWeapon.weapon = inventory[current_weapon_index];
+    oWeapon.weapon = inventory[current_weapon_index];
 	image_yscale = 1
 }
 
@@ -64,8 +66,8 @@ function switch_weapon(new_weapon) {
 	var create = false
 	
 	
-	if ( oCurrentWeapon.weapon != noone ) {
-		var obj = oCurrentWeapon.weapon.obj
+	if ( oWeapon.weapon != noone ) {
+		var obj = oWeapon.weapon.obj
 		create = true
 	}
 	
@@ -78,16 +80,25 @@ function switch_weapon(new_weapon) {
 		create = true
 	}
 	
-    oCurrentWeapon.weapon = inventory[current_weapon_index];
+    oWeapon.weapon = inventory[current_weapon_index];
 	
 	if ( create ) {instance_create_depth(x, y, depth, obj)}
 }
 
 function player_hit(_damage) {
-	invincibility = true
+	immunity = true
 	immunity_frames = immunity_frames_value
 	hp -= _damage
 }	
+
+function roll() {
+	immunity = true;
+	immunity_frames = 15;
+	
+	dash_time = immunity_frames;
+	dash_spd = spd * 2 * dt;
+	
+}
 	
 
 #endregion

@@ -18,5 +18,6 @@ function draw_text_outline(_x, _y, _outlinecolor, _strcolor, _str) {
   
 	//Text  
 	draw_set_color(argument[3]);  
-	draw_text(xx, yy, argument[4]); 
+	draw_text(xx, yy, argument[4]);
+	draw_set_color(c_white);
 }

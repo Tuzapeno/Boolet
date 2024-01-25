@@ -1,10 +1,23 @@
-/// @description Insert description here
-// You can write your code in this editor
+///@desc variables
 
-stats = noone
-player = false
+mouse_angle = 0
+knockback_angle = 0
 
-vsp = 0
-hsp = 0
+player = oPlayer
+ox = player.x 
+oy = player.y
 
-depth = -y
+weapon = global.weapons.guns.ak47
+
+canshoot = 0; // Shooting timer
+bullet_index = 0; // Current bullet
+
+// Modifiers
+real_innaccuracy = 0
+real_kick = 0
+
+real_damage = weapon.damage
+
+
+
+

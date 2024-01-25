@@ -12,8 +12,8 @@
     "path": "folders/Objects/Weapons/Guns.yy",
   },
   "parentObjectId": {
-    "name": "oWeapon",
-    "path": "objects/oWeapon/oWeapon.yy",
+    "name": "oPickableWeapon",
+    "path": "objects/oPickableWeapon/oPickableWeapon.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

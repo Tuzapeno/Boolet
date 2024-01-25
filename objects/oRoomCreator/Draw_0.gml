@@ -36,7 +36,7 @@ draw_clear_alpha(c_black, 0)
 //}
 
 
-//with( oCurrentWeapon ) {
+//with( oWeapon ) {
 //	gpu_set_fog(true, c_black, 0, 0)
 //	if (weapon != noone) {
 //		if( weapon.wp_type == MELEE_TYPE ) {
