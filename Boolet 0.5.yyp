@@ -87,6 +87,7 @@
     {"id":{"name":"acDash","path":"animcurves/acDash/acDash.yy",},},
     {"id":{"name":"sSmallFGrip","path":"sprites/sSmallFGrip/sSmallFGrip.yy",},},
     {"id":{"name":"oEnemyChaser","path":"objects/oEnemyChaser/oEnemyChaser.yy",},},
+    {"id":{"name":"oDisplayController","path":"objects/oDisplayController/oDisplayController.yy",},},
     {"id":{"name":"create_wall_debris","path":"scripts/create_wall_debris/create_wall_debris.yy",},},
     {"id":{"name":"create_bullet_case","path":"scripts/create_bullet_case/create_bullet_case.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
@@ -105,6 +106,7 @@
     {"id":{"name":"draw_outline_shader","path":"scripts/draw_outline_shader/draw_outline_shader.yy",},},
     {"id":{"name":"sMoney","path":"sprites/sMoney/sMoney.yy",},},
     {"id":{"name":"draw_text_outline","path":"scripts/draw_text_outline/draw_text_outline.yy",},},
+    {"id":{"name":"_display_init","path":"rooms/_display_init/_display_init.yy",},},
     {"id":{"name":"sWallDust","path":"sprites/sWallDust/sWallDust.yy",},},
     {"id":{"name":"oRoomCreator","path":"objects/oRoomCreator/oRoomCreator.yy",},},
     {"id":{"name":"oParticle","path":"objects/oParticle/oParticle.yy",},},
@@ -158,6 +160,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"_display_init","path":"rooms/_display_init/_display_init.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType": "game",

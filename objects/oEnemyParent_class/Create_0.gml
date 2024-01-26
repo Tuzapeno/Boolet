@@ -4,6 +4,7 @@
 event_inherited()
 
 collision_id = noone
+hp = 1;
 
 
 
