@@ -3,13 +3,11 @@
 
 // Camera Stats
 cam = view_camera[0]
-min_camera_width = 320
-min_camera_height = 160
-cam_width = min_camera_width * 2
-cam_height = min_camera_height * 2
-half_width = cam_width * 0.5
-half_height = cam_height * 0.5
-camera_speed = 0.1
+cam_width = view_wport[0] / 2;
+cam_height = view_hport[0] / 2;
+half_width = cam_width * 0.5;
+half_height = cam_height * 0.5;
+camera_speed = 0.1;
 
 follow = noone
 

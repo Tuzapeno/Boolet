@@ -1,8 +1,8 @@
 /// @description 
 zoom = 1;
 ideal_width = 0;
-ideal_heigth = 1080;
-max_zoom = 0;
+ideal_heigth = 540;
+max_zoom = 4;
 
 aspect_ratio = display_get_width() / display_get_height();
 
@@ -22,6 +22,8 @@ for (var i = 1; i <= room_last; ++i) {
 	}
 }
 
+window_set_size(ideal_width, ideal_heigth);
+window_set_fullscreen(true);
 surface_resize(application_surface, ideal_width, ideal_heigth);
 room_goto_next();
 
