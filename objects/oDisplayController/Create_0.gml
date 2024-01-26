@@ -24,6 +24,7 @@ for (var i = 1; i <= room_last; ++i) {
 
 window_set_size(ideal_width, ideal_heigth);
 window_set_fullscreen(true);
+display_set_gui_size(ideal_width, ideal_heigth);
 surface_resize(application_surface, ideal_width, ideal_heigth);
 room_goto_next();
 
