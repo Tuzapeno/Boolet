@@ -21,12 +21,25 @@ instance_create_depth(x, y, depth, oShotgun)
 instance_create_depth(x, y, depth, oSmg)
 instance_create_depth(x, y, depth, oMinigun)
 
+instance_create_depth(x + 100, y + 100, depth, oDrill)
+
 inventory = array_create(2);
 inventory[0] = global.weapons.guns.ak47;
 inventory[1] = global.weapons.guns.shortbarrel;
 current_weapon_index = 0;
 
 wpmanager.weapon = inventory[0]
+
+// Keys
+
+left_key = false;
+right_key = false;
+up_key = false;
+down_key = false;
+roll_key = false;
+
+interact_key = false;
+
 
 // Character variables
 image_speed = 0.3;
@@ -42,7 +55,7 @@ hforce = 0;
 vforce = 0;
 
 money = 0;
-energy = 0;
+energy = 20;
 material_grab_radius = 50;
 
 immunity = false;

@@ -8,11 +8,13 @@ if hp > max_hp
 	hp = max_hp;
 
 dt = delta_time / 1000000
-var left_key = keyboard_check(ord("A"))
-var right_key = keyboard_check(ord("D"))
-var up_key = keyboard_check(ord("W"))
-var down_key = keyboard_check(ord("S"))
-var roll_key = keyboard_check(vk_space)
+left_key = keyboard_check(ord("A"))
+right_key = keyboard_check(ord("D"))
+up_key = keyboard_check(ord("W"))
+down_key = keyboard_check(ord("S"))
+roll_key = keyboard_check(vk_space)
+
+interact_key = keyboard_check(ord("E"));
 
 mouse_direction = point_direction(x, y, mouse_x, mouse_y);
 

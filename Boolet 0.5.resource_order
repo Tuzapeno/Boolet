@@ -112,6 +112,7 @@
     {"name":"oAK47","order":1,"path":"objects/oAK47/oAK47.yy",},
     {"name":"level_up","order":20,"path":"scripts/level_up/level_up.yy",},
     {"name":"sSmg","order":10,"path":"sprites/sSmg/sSmg.yy",},
+    {"name":"oInteractiveParent","order":18,"path":"objects/oInteractiveParent/oInteractiveParent.yy",},
     {"name":"sBloodDebris","order":16,"path":"sprites/sBloodDebris/sBloodDebris.yy",},
     {"name":"create_3x3_room","order":5,"path":"scripts/create_3x3_room/create_3x3_room.yy",},
     {"name":"oDummy","order":12,"path":"objects/oDummy/oDummy.yy",},

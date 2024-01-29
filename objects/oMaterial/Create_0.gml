@@ -8,5 +8,5 @@ pull = false
 
 
 function material_add() {
-	show_debug_message($"Not implemented for: {object_get_name(object_index)}")
+	show_debug_message($"material_add() implemented for: {object_get_name(object_index)}")
 }

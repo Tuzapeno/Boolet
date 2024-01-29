@@ -150,6 +150,7 @@
     {"id":{"name":"level_up","path":"scripts/level_up/level_up.yy",},},
     {"id":{"name":"chance","path":"scripts/chance/chance.yy",},},
     {"id":{"name":"sSmg","path":"sprites/sSmg/sSmg.yy",},},
+    {"id":{"name":"oInteractiveParent","path":"objects/oInteractiveParent/oInteractiveParent.yy",},},
     {"id":{"name":"tsWinterLevel","path":"tilesets/tsWinterLevel/tsWinterLevel.yy",},},
     {"id":{"name":"sBloodDebris","path":"sprites/sBloodDebris/sBloodDebris.yy",},},
     {"id":{"name":"create_3x3_room","path":"scripts/create_3x3_room/create_3x3_room.yy",},},
