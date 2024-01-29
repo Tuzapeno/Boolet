@@ -12,6 +12,7 @@ event_inherited();
 
 drill_cost = 20;
 contact_text = $"Start Drill? ({drill_cost} Energy)";
+drill_time = 180;
 
 
 state = DRILL.OFF;

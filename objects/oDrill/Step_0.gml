@@ -12,7 +12,7 @@ switch state {
 	case DRILL.MINING:
 		image_speed = 0.6;
 		
-		with( instance_create_depth(x, y+sprite_yoffset, depth-1, oParticle) ) {
+		with( instance_create_depth(x, y+sprite_yoffset-1, depth-1, oParticle) ) {
 			debris = false;
 			sprite_index = sBulletSpark;
 			fric = 0.9;
@@ -21,5 +21,14 @@ switch state {
 			motion_add(dir, random_range(-4, -9));
 		}
 		
+		if drill_time <= 0 {
+			state = DRILL.DONE;
+		} else drill_time--;
+		
+		break;
+		
+	case DRILL.DONE: 
+		instance_create_depth(x, y+sprite_yoffset, depth, oHole);
+		instance_destroy();
 		break;
 }
