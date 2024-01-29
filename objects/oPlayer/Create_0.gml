@@ -42,7 +42,8 @@ hforce = 0;
 vforce = 0;
 
 money = 0;
-money_grab_radius = 50;
+energy = 0;
+material_grab_radius = 50;
 
 immunity = false;
 immunity_frames = 30;

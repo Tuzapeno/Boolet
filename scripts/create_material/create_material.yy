@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "create_money",
+  "name": "create_material",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

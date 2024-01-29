@@ -23,17 +23,17 @@ if hsp != 0 || vsp != 0 {
 depth = -y
 image_xscale = mouse_x > x ? 1 : -1
 
-#region money getting
-var _money_objs = ds_list_create()
-var _nums = collision_circle_list(x, y, money_grab_radius, oMoney, false, false, _money_objs, true)
+#region material getting
+var _material_objs = ds_list_create()
+var _nums = collision_circle_list(x, y, material_grab_radius, oMaterial, false, false, _material_objs, true)
 
 if ( _nums > 0 ) {
 	for ( var i = 0; i < _nums; i++ ) {
-		_money_objs[| i].pull = true
+		_material_objs[| i].pull = true
 	}
 }
 
-ds_list_destroy(_money_objs)
+ds_list_destroy(_material_objs)
 #endregion
 
 if ((left_key || right_key || up_key || down_key) && state == PLAYER.IDLE)

@@ -12,7 +12,11 @@ if ( hp <= 0 && state != CHASER.DEAD ) {
 	sprite_index = sChaserDeath
 	image_speed = 0.2
 	state = CHASER.DEAD
-	create_money(irandom_range(1, 3))
+	create_material(MATERIAL.MONEY, irandom_range(1,3))
+	
+	if chance(0.2)
+		create_material(MATERIAL.ENERGY, 1)
+	
 }
 
 switch ( state ) {
