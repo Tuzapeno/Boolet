@@ -14,8 +14,8 @@ if ( hp <= 0 && state != CHASER.DEAD ) {
 	state = CHASER.DEAD
 	create_material(MATERIAL.MONEY, irandom_range(1,3))
 	
-	if chance(0.2)
-		create_material(MATERIAL.ENERGY, 1)
+	if chance(1)
+		create_material(MATERIAL.ENERGY, 3)
 	
 }
 
