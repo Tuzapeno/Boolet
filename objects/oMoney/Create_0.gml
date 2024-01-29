@@ -1,8 +1,12 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 
-dir = random(360)
-move_length = 5
 
-pull = false
 
+// Inherit the parent event
+event_inherited();
+
+function material_add() {
+	if instance_exists(oPlayer)	{
+		oPlayer.money++;			
+	}
+}

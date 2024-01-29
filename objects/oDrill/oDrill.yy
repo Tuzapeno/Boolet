@@ -1,20 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oMoney",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oDrill",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Control",
+    "path": "folders/Objects/Control.yy",
   },
-  "parentObjectId": {
-    "name": "oMaterial",
-    "path": "objects/oMaterial/oMaterial.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sMoney",
-    "path": "sprites/sMoney/sMoney.yy",
+    "name": "sDrill",
+    "path": "sprites/sDrill/sDrill.yy",
   },
   "spriteMaskId": null,
   "visible": true,
