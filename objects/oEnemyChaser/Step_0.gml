@@ -73,12 +73,12 @@ if ( place_meeting(x, y + vsp, oSolid) ) {
 switch state {
 	case CHASER.IDLE:
 		sprite_index = sChaserIdle;
-		image_speed = 0.2;
+		image_speed = 0.4;
 		break;
 	
 	case CHASER.FOLLOWING:
 		sprite_index = sChaserRun;
-		image_speed = 0.2;
+		image_speed = 0.4;
 		image_xscale = player.x < x ? -1 : 1;
 		break;
 }

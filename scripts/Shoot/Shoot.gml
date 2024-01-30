@@ -29,6 +29,9 @@ function Shoot(){
 				image_xscale = max(1, spd/sprite_width) 
 			}
 			
+			instance_create_depth(x + lengthdir_x(_dist, image_angle), y + lengthdir_y(_dist, image_angle), 
+			depth - 2, oGunFlash)
+			
 			
 		}
 		create_bullet_case(weapon.spread_number)
