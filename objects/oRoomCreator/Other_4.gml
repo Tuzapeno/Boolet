@@ -64,20 +64,25 @@ ds_list_destroy(walker_list)
 
 
 // Put player 
-clear_around(initial_x, initial_y)
+clear_around(initial_x + 1, initial_y + 1)
 
 if (instance_exists(oPlayer)) {
-	oPlayer.x = initial_x * TILESIZE
-	oPlayer.y = initial_y * TILESIZE
+	oPlayer.x = (initial_x + 1) * TILESIZE
+	oPlayer.y = (initial_y + 1) * TILESIZE
 	
 }
 else {
-	instance_create_layer(initial_x*TILESIZE, initial_y*TILESIZE, "Instances", oPlayer)
+	instance_create_layer((initial_x+1)*TILESIZE, (initial_x+1)*TILESIZE, "Instances", oPlayer)
 }
 
 if (!instance_exists(oCamera)) {
 	instance_create_depth(x, y, depth, oCamera)	
 }
+
+// Put drill
+clear_around(initial_x, initial_y)
+
+instance_create_layer(initial_x*TILESIZE, initial_y*TILESIZE, "Instances", oDrill)
 
 #region add_instances
 
@@ -93,33 +98,32 @@ for( var _x = 0; _x < global.map_width_t; _x++ ) {
 
 #endregion
 
-
-
 #region apply_tileset
-var tile_map = layer_tilemap_get_id("tilemap")
+//var tile_map = layer_tilemap_get_id("tilemap")
 
-var bitN = 1,
-bitW = 2,
-bitE = 4,
-bitS = 8
+//var bitN = 1,
+//bitW = 2,
+//bitE = 4,
+//bitS = 8
 
-for( var _x = 0; _x < global.map_width_t; _x++ ) {
-	for( var _y = 0; _y < global.map_height_t; _y++ ) {
-		if ( global.map_grid[# _x, _y] == WALL ) {
-			var north = global.map_grid[# _x, _y-1] == WALL
-			var west = global.map_grid[# _x-1, _y] == WALL
-			var east = global.map_grid[# _x+1, _y] == WALL
-			var south = global.map_grid[# _x, _y+1] == WALL
+//for( var _x = 0; _x < global.map_width_t; _x++ ) {
+//	for( var _y = 0; _y < global.map_height_t; _y++ ) {
+//		if ( global.map_grid[# _x, _y] == WALL ) {
+//			var north = global.map_grid[# _x, _y-1] == WALL
+//			var west = global.map_grid[# _x-1, _y] == WALL
+//			var east = global.map_grid[# _x+1, _y] == WALL
+//			var south = global.map_grid[# _x, _y+1] == WALL
 			
-			var t_index = north * bitN + west * bitW + east * bitE + south * bitS + 1
-			tilemap_set(tile_map, t_index, _x, _y)
-		}
-		if ( global.map_grid[# _x, _y] == EMPTY ) {
-			tilemap_set(tile_map, 17, _x, _y)
-		}
-	}
+//			var t_index = north * bitN + west * bitW + east * bitE + south * bitS + 1
+//			tilemap_set(tile_map, t_index, _x, _y)
+//		}
+//		if ( global.map_grid[# _x, _y] == EMPTY ) {
+//			tilemap_set(tile_map, 17, _x, _y)
+//		}
+//	}
 	
-}
+//}
+draw_map();
 #endregion
 
 global.game_started = true

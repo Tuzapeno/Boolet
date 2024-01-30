@@ -21,8 +21,6 @@ instance_create_depth(x, y, depth, oShotgun)
 instance_create_depth(x, y, depth, oSmg)
 instance_create_depth(x, y, depth, oMinigun)
 
-instance_create_layer(x + 100, y + 100, "Instances", oDrill)
-
 inventory = array_create(2);
 inventory[0] = global.weapons.guns.ak47;
 inventory[1] = global.weapons.guns.shortbarrel;
