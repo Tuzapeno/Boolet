@@ -13,7 +13,6 @@ right_key = keyboard_check(ord("D"))
 up_key = keyboard_check(ord("W"))
 down_key = keyboard_check(ord("S"))
 roll_key = keyboard_check(vk_space)
-
 interact_key = keyboard_check(ord("E"));
 
 mouse_direction = point_direction(x, y, mouse_x, mouse_y);
@@ -42,16 +41,10 @@ if ((left_key || right_key || up_key || down_key) && state == PLAYER.IDLE)
 	state = PLAYER.MOVING;
 
 
-switch state {
-	case PLAYER.IDLE:
-		break;
-	
+switch state {	
 	case PLAYER.MOVING:
 		hsp = ((right_key - left_key) * spd) * dt
 		vsp = ((down_key - up_key) * spd) * dt
-		
-		if hsp+vsp == 0
-			state = PLAYER.IDLE;
 			
 		if roll_key {
 			roll();
@@ -74,7 +67,7 @@ switch state {
 	
 		if dash_time <= 0 {
 			dash_time = immunity_frames;
-			state = PLAYER.IDLE;
+			state = PLAYER.MOVING;
 			hsp = 0;
 			vsp = 0;
 		} else dash_time--;

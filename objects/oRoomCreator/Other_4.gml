@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 // Get the center of room coordinates
 var initial_x = irandom_range(4, global.map_width_t-4),
 initial_y = irandom_range(4, global.map_height_t-4)
