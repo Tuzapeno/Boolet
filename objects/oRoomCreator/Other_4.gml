@@ -81,9 +81,6 @@ if (!instance_exists(oCamera)) {
 
 #region add_instances
 
-var enemy_spawn = 0.05
-var distance_to_player = 8
-
 for( var _x = 0; _x < global.map_width_t; _x++ ) {
 	for( var _y = 0; _y < global.map_height_t; _y++ ) {
 		switch( global.map_grid[# _x, _y] ) {
