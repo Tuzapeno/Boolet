@@ -11,3 +11,4 @@ global.game_started = false
 next_key = false
 
 window_set_cursor(cr_none)
+cursor_sprite = sCrosshairDefault;

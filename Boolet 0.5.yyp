@@ -58,6 +58,7 @@
     {"id":{"name":"draw_sprite_outline_shader","path":"scripts/draw_sprite_outline_shader/draw_sprite_outline_shader.yy",},},
     {"id":{"name":"clear_alone","path":"scripts/clear_alone/clear_alone.yy",},},
     {"id":{"name":"sPlayerIdle","path":"sprites/sPlayerIdle/sPlayerIdle.yy",},},
+    {"id":{"name":"oSpawner","path":"objects/oSpawner/oSpawner.yy",},},
     {"id":{"name":"sWhiteLaser","path":"sprites/sWhiteLaser/sWhiteLaser.yy",},},
     {"id":{"name":"sStock","path":"sprites/sStock/sStock.yy",},},
     {"id":{"name":"oMoney","path":"objects/oMoney/oMoney.yy",},},

@@ -4,18 +4,4 @@
 draw_self();
 
 // Cursor
-draw_sprite_ext(sCrosshairDefault, 0, mouse_x, mouse_y, 0.5, 0.5, 0, c_white, 1);
-
 draw_text(x, y+sprite_yoffset, $"HP: {hp}/{max_hp}")
-
-//var translation = ["idle", "moving", "rolling", "hit"]
-
-//draw_set_font(fDamageIndicator);
-
-//draw_text(x, y-50, translation[state])
-
-//draw_set_font(fDefault)
-
-//if (immunity) {
-//	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_red, 1)	
-//}

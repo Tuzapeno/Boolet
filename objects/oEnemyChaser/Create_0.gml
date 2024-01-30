@@ -28,7 +28,6 @@ state = CHASER.IDLE
 
 dir = 0
 knockback_dir = 0
-flash_alpha = 0
 
 function apply_force(_length, _dir) {
 	hsp += lengthdir_x(_length, _dir)

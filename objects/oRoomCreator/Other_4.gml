@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
 // Get the center of room coordinates
 var initial_x = irandom_range(4, global.map_width_t-4),
 initial_y = irandom_range(4, global.map_height_t-4)
@@ -10,7 +9,7 @@ initial_y = irandom_range(4, global.map_height_t-4)
 // 1. Drunkard walk
 var walker_max = 5
 var x2_floors_chance = -1
-var x3_floors_chance = 0.25
+var x3_floors_chance = 0.75
 
 var t90 = 0.01
 var tc90 = 0.01
@@ -21,7 +20,7 @@ ds_list_add(walker_list, new create_walker(initial_x, initial_y, x2_floors_chanc
 
 var iterations = 10000
 
-while(global.filled_tiles < 400 ) {
+while(global.filled_tiles < 1500 ) {
 	
 	// Chance to change walkers direction
 	for( var i = 0; i < ds_list_size(walker_list); i++ ) {
@@ -90,12 +89,7 @@ for( var _x = 0; _x < global.map_width_t; _x++ ) {
 		switch( global.map_grid[# _x, _y] ) {
 			case WALL:
 				instance_create_layer(_x * TILESIZE, _y * TILESIZE, "Instances", oWall)
-				break
-			case EMPTY:
-				if (chance(enemy_spawn) && point_distance(initial_x, initial_y, _x, _y) > distance_to_player) {
-					instance_create_layer(_x * TILESIZE + HALFTILE, _y * TILESIZE + HALFTILE, "Instances", oEnemyChaser)
-				}
-				break
+				break;
 		}
 	}
 }
