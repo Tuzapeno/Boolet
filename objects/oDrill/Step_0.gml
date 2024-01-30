@@ -23,14 +23,16 @@ switch state {
 		}
 		
 		//Wall Dust
-		with( instance_create_depth(x, y+sprite_yoffset-1, depth+1, oParticle) ) {
-			debris = true;
-			sprite_index = sWallDebris;
-			image_index = irandom_range(0, image_number-1);
-			fric = 0.9;
-			var dir = random(360);
-			image_angle = dir;
-			motion_add(dir, random_range(2, 5));
+		if chance(0.05) {
+			with( instance_create_depth(x, y+sprite_yoffset-1, depth+1, oParticle) ) {
+				debris = true;
+				sprite_index = sWallDebris;
+				image_index = irandom_range(0, image_number-1);
+				fric = 0.9;
+				var dir = random(360);
+				image_angle = dir;
+				motion_add(dir, random_range(2, 5));
+			}
 		}
 		
 		if drill_time <= 0 {

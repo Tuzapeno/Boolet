@@ -26,28 +26,5 @@ if ( !surface_exists(shadow_surface) ) { shadow_surface = surface_create(room_wi
 surface_set_target(shadow_surface)
 draw_clear_alpha(c_black, 0)
 
-
-//with( oEntities ) {
-//	gpu_set_fog(true, c_black, 0, 0)
-//	if ( sprite_index ) {
-//		draw_sprite_ext(sprite_index, image_index, x, y+sprite_height, image_xscale, -1, image_angle, c_white, 0.75)
-//	}
-//	gpu_set_fog(false, c_black, 0, 0)
-//}
-
-
-//with( oWeapon ) {
-//	gpu_set_fog(true, c_black, 0, 0)
-//	if (weapon != noone) {
-//		if( weapon.wp_type == MELEE_TYPE ) {
-//			draw_sprite_ext(weapon.holding_sprite, 0, x, y+sprite_height, 1, melee_yscale, image_angle, c_white, 0.75)
-//		}
-//		else if( weapon.wp_type == GUN_TYPE ) {
-//			draw_sprite_ext(weapon.holding_sprite, 0, x, y+sprite_height, 1, y_scale, looking_direction, c_white, 0.75)
-//		}
-//	}
-//	gpu_set_fog(false, c_black, 0, 0)
-//}
-
 surface_reset_target()
 draw_surface(shadow_surface, 0, 0)
