@@ -34,3 +34,24 @@ function apply_force(_length, _dir) {
 	vsp += lengthdir_y(_length, _dir)
 }
 
+function die() {
+	create_material(MATERIAL.MONEY, irandom_range(1,3))
+	
+	if chance(0.5)
+		create_material(MATERIAL.ENERGY, irandom_range(1,3))	
+		
+	repeat(irandom_range(3,5)) {
+		with( instance_create_depth(x, y, depth-1, oParticle) ) {
+			var dir = irandom(360);
+			debris = true;
+			sprite_index = sEnemyDebris;
+			image_speed = 0;
+			image_index = irandom_range(0, image_number-1);
+			fric = 0.9;
+			image_angle = dir;
+			motion_add(dir, random_range(1, 3));
+		}		
+	}
+		
+	instance_destroy();
+}

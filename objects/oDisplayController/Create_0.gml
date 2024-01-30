@@ -1,7 +1,7 @@
 /// @description 
 zoom = 1;
 ideal_width = 0;
-ideal_heigth = 540;
+ideal_heigth = 320;
 max_zoom = 4;
 
 aspect_ratio = display_get_width() / display_get_height();

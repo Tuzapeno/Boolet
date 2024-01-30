@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEnemy",
-    "path": "sprites/sEnemy/sEnemy.yy",
+    "name": "sChaserIdle",
+    "path": "sprites/sChaserIdle/sChaserIdle.yy",
   },
   "spriteMaskId": null,
   "visible": true,

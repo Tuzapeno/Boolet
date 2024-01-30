@@ -19,6 +19,8 @@ switch state {
 			fric = 0.9;
 			var dir = 270 + random_range(-90, 90);
 			image_angle = dir;
+			image_xscale = 2;
+			image_yscale = 2;
 			motion_add(dir, random_range(-4, -9));
 		}
 		

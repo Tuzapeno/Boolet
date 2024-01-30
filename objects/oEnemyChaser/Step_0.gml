@@ -9,14 +9,7 @@ player = oPlayer
 player_in_range = collision_circle(x, y, detect_radius, player, false, false)
 
 if ( hp <= 0 && state != CHASER.DEAD ) {
-	sprite_index = sChaserDeath
-	image_speed = 0.2
-	state = CHASER.DEAD
-	create_material(MATERIAL.MONEY, irandom_range(1,3))
-	
-	if chance(1)
-		create_material(MATERIAL.ENERGY, 3)
-	
+	state = CHASER.DEAD	
 }
 
 switch ( state ) {
@@ -60,12 +53,7 @@ switch ( state ) {
 		break
 		
 	case CHASER.DEAD:
-		if (image_index >= image_number-1) {
-			surface_set_target(oCamera.debris_surface)
-			draw_self()
-			surface_reset_target()
-			instance_destroy()
-		}
+		die();
 		break
 }
 
@@ -80,6 +68,20 @@ if ( place_meeting(x, y + vsp, oSolid) ) {
 }
 #endregion
 
+// Animations
+
+switch state {
+	case CHASER.IDLE:
+		sprite_index = sChaserIdle;
+		image_speed = 0.2;
+		break;
+	
+	case CHASER.FOLLOWING:
+		sprite_index = sChaserRun;
+		image_speed = 0.2;
+		image_xscale = player.x < x ? -1 : 1;
+		break;
+}
 
 
 

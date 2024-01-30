@@ -3,8 +3,8 @@
 
 // Camera Stats
 cam = view_camera[0]
-cam_width = view_wport[0] 
-cam_height = view_hport[0] 
+cam_width = view_wport[0];
+cam_height = view_hport[0];
 half_width = cam_width * 0.5;
 half_height = cam_height * 0.5;
 camera_speed = 0.1;
