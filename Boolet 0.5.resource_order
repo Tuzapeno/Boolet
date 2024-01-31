@@ -29,6 +29,8 @@
     {"name":"Stocks","order":4,"path":"folders/Sprites/Weapons/Stocks.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
+    {"name":"Enemies","order":26,"path":"folders/Scripts/Enemies.yy",},
+    {"name":"ChaserAI","order":1,"path":"folders/Scripts/Enemies/ChaserAI.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sRedBulletCase","order":2,"path":"sprites/sRedBulletCase/sRedBulletCase.yy",},

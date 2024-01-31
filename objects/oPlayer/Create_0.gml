@@ -44,16 +44,14 @@ roll_key = false;
 
 interact_key = false;
 
-// COMMON
-
-
-
 // Character variables
 image_speed = 0.3;
 
+base_spd = 3;
+spd = base_spd;
+
 mouse_direction = 0;
 player_direction = 0;
-dt = 0;
 
 money = 0;
 energy = 20;
@@ -89,13 +87,4 @@ function switch_weapon(new_weapon) {
 	if ( create ) {instance_create_depth(x, y, depth, obj)}
 }
 
-function roll() {
-	immunity = true;
-	immunity_frames = immunity_frames_value;
-	
-	dash_time = immunity_frames;
-	dash_spd = spd * 5 * dt;
-	dash_curve_pos = 0;
-	dash_curve_spd = 1 / immunity_frames;
-	
-}
+

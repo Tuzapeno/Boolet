@@ -3,12 +3,13 @@
 
 event_inherited();
 
-dt = delta_time / 1000000
-left_key = keyboard_check(ord("A"))
-right_key = keyboard_check(ord("D"))
-up_key = keyboard_check(ord("W"))
-down_key = keyboard_check(ord("S"))
-roll_key = keyboard_check(vk_space)
+state();
+
+left_key = keyboard_check(ord("A"));
+right_key = keyboard_check(ord("D"));
+up_key = keyboard_check(ord("W"));
+down_key = keyboard_check(ord("S"));
+roll_key = keyboard_check(vk_space);
 interact_key = keyboard_check(ord("E"));
 
 mouse_direction = point_direction(x, y, mouse_x, mouse_y);
@@ -17,8 +18,8 @@ if hsp != 0 || vsp != 0 {
 	player_direction = point_direction(0, 0, hsp, vsp);
 }
 
-depth = -y
-image_xscale = mouse_x > x ? 1 : -1
+depth = -y;
+image_xscale = mouse_x > x ? 1 : -1;
 
 #region material getting
 var _material_objs = ds_list_create()
@@ -32,8 +33,6 @@ if ( _nums > 0 ) {
 
 ds_list_destroy(_material_objs)
 #endregion
-
-
 
 #region Animations
 
@@ -63,5 +62,5 @@ if ( place_meeting(x, y + vsp, oSolid) ) {
 }
 #endregion
 
-x += hsp 
-y += vsp 
+x += hsp;
+y += vsp;
