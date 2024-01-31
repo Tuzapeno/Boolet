@@ -5,7 +5,7 @@ function Shoot(){
 	{
 		// Play sound
 		// Play shooting sound at random gain and pitch to give variety
-		// audio_play_sound(weapon.sound, 10, false, random_range(0.8,1), 0, random_range(0.8, 1)); 
+		//audio_play_sound(sndRifle, 10, false, 1, 0, 1); 
 		
 		var _dist = sprite_get_width(weapon.sprite) - sprite_get_xoffset(weapon.sprite) + sprite_get_width(weapon.ammo[bullet_index].sprite);
 		

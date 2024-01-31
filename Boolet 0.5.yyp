@@ -116,6 +116,7 @@
     {"id":{"name":"draw_text_outline","path":"scripts/draw_text_outline/draw_text_outline.yy",},},
     {"id":{"name":"_display_init","path":"rooms/_display_init/_display_init.yy",},},
     {"id":{"name":"sWallDust","path":"sprites/sWallDust/sWallDust.yy",},},
+    {"id":{"name":"sndRifle","path":"sounds/sndRifle/sndRifle.yy",},},
     {"id":{"name":"oRoomCreator","path":"objects/oRoomCreator/oRoomCreator.yy",},},
     {"id":{"name":"oParticle","path":"objects/oParticle/oParticle.yy",},},
     {"id":{"name":"sChaserDeath","path":"sprites/sChaserDeath/sChaserDeath.yy",},},

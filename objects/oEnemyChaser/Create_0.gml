@@ -52,6 +52,19 @@ function die() {
 			motion_add(dir, random_range(1, 3));
 		}		
 	}
+	
+	for (var i = 0; i < 4; ++i) {
+	    with( instance_create_depth(x, y, depth-1, oParticle) ) {
+			var dir = (i*90)+45;
+			debris = false;
+			sprite_index = sWallDust;
+			fric = 0.9;
+			image_angle = dir;
+			motion_add(dir, random_range(1, 3));
+		}	
+	}
+	
+	
 		
 	instance_destroy();
 }

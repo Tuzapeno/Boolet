@@ -8,13 +8,12 @@ else {
 	follow = noone
 }
 
-if ( follow == oPlayer ) {
-	var _ddir = point_direction(follow.x, follow.y, mouse_x, mouse_y)
-	var camera_x = follow.x + lengthdir_x(cam_fov + weapon_range, _ddir)
-	var camera_y = follow.y + lengthdir_y(cam_fov + weapon_range, _ddir)
+if ( follow == oPlayer ) {	
+	var Tox = follow.x + (mouse_x - follow.x)/6
+	var Toy = follow.y + (mouse_y - follow.y)/6
 
-	x = lerp(x, camera_x, camera_speed)
-	y = lerp(y, camera_y, camera_speed)
+	x = lerp(x, Tox, camera_speed)
+	y = lerp(y, Toy, camera_speed)
 }
 else if ( follow != noone ) {
 	x = lerp(x, follow.x, camera_speed)
