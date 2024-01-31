@@ -31,6 +31,7 @@
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
     {"name":"Enemies","order":26,"path":"folders/Scripts/Enemies.yy",},
     {"name":"ChaserAI","order":1,"path":"folders/Scripts/Enemies/ChaserAI.yy",},
+    {"name":"Drill","order":27,"path":"folders/Scripts/Drill.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sRedBulletCase","order":2,"path":"sprites/sRedBulletCase/sRedBulletCase.yy",},
