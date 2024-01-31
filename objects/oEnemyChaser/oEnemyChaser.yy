@@ -35,6 +35,9 @@
     "name": "sChaserIdle",
     "path": "sprites/sChaserIdle/sChaserIdle.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sChaserMask",
+    "path": "sprites/sChaserMask/sChaserMask.yy",
+  },
   "visible": true,
 }

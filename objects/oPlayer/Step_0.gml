@@ -57,8 +57,16 @@ switch state {
 		break;
 		
 	case PLAYER.ROLLING:
-		hsp = lengthdir_x(dash_spd, player_direction);
-		vsp = lengthdir_y(dash_spd, player_direction);
+		var _curve = animcurve_get(acDash);
+		var _channel = animcurve_get_channel(_curve, "curve1");
+		var _value = animcurve_channel_evaluate(_channel, dash_curve_pos);
+		dash_curve_pos += dash_curve_spd;
+		
+		hsp = ((right_key - left_key) * spd) * dt
+		vsp = ((down_key - up_key) * spd) * dt
+		
+		hsp += lengthdir_x(dash_spd, player_direction) * _value;
+		vsp += lengthdir_y(dash_spd, player_direction) * _value;
 	
 		instance_create_depth(x, y, depth+1, oTrail, {
 			sprite_index: sprite_index,
@@ -71,6 +79,11 @@ switch state {
 			hsp = 0;
 			vsp = 0;
 		} else dash_time--;
+		
+		if dash_curve_pos >= 1 {
+			dash_curve_pos = 0;
+			dash_curve_spd = 0;
+		}	
 			
 		break;
 }

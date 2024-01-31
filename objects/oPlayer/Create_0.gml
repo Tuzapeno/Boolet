@@ -66,6 +66,9 @@ dash_time = immunity_frames;
 max_hp = 10;
 hp = max_hp;
 
+dash_curve_pos = 0;
+dash_curve_spd = 0.05;
+
 #region functions
 
 function next_weapon() {
@@ -105,10 +108,12 @@ function player_hit(_damage) {
 
 function roll() {
 	immunity = true;
-	immunity_frames = 15;
+	immunity_frames = immunity_frames_value;
 	
 	dash_time = immunity_frames;
-	dash_spd = spd * 2 * dt;
+	dash_spd = spd * 5 * dt;
+	dash_curve_pos = 0;
+	dash_curve_spd = 1 / immunity_frames;
 	
 }
 	
