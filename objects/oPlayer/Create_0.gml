@@ -17,7 +17,7 @@ z_grav = 0.8;
 z_max_vsp = 10;
 z = camera_get_view_y(VIEW_CAMERA) - sprite_height;
 
-state = PLAYER.ARRIVING;
+state = player_state_arriving;
 
 var wpmanager = instance_create_depth(x, y, depth, oWeapon)
 
@@ -44,44 +44,27 @@ roll_key = false;
 
 interact_key = false;
 
+// COMMON
+
+
 
 // Character variables
 image_speed = 0.3;
-hsp = 0;
-vsp = 0;
-spd = 150;
+
 mouse_direction = 0;
 player_direction = 0;
 dt = 0;
-
-
-hforce = 0;
-vforce = 0;
 
 money = 0;
 energy = 20;
 material_grab_radius = 50;
 
-immunity = false;
-immunity_frames = 30;
-immunity_frames_value = 30;
-
 dash_spd = 0;
 dash_time = immunity_frames;
 
-max_hp = 10;
-hp = max_hp;
 
 dash_curve_pos = 0;
 dash_curve_spd = 0.05;
-
-#region functions
-
-function next_weapon() {
-    current_weapon_index = (current_weapon_index + 1) % 2;
-    oWeapon.weapon = inventory[current_weapon_index];
-	image_yscale = 1
-}
 
 function switch_weapon(new_weapon) {
 	var create = false
@@ -106,12 +89,6 @@ function switch_weapon(new_weapon) {
 	if ( create ) {instance_create_depth(x, y, depth, obj)}
 }
 
-function player_hit(_damage) {
-	immunity = true
-	immunity_frames = immunity_frames_value
-	hp -= _damage
-}	
-
 function roll() {
 	immunity = true;
 	immunity_frames = immunity_frames_value;
@@ -122,6 +99,3 @@ function roll() {
 	dash_curve_spd = 1 / immunity_frames;
 	
 }
-	
-
-#endregion

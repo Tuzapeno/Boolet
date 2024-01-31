@@ -60,6 +60,7 @@
     {"name":"sLandmark","order":36,"path":"sprites/sLandmark/sLandmark.yy",},
     {"name":"create_floating_text","order":17,"path":"scripts/create_floating_text/create_floating_text.yy",},
     {"name":"sEnergyBall","order":28,"path":"sprites/sEnergyBall/sEnergyBall.yy",},
+    {"name":"oEntity","order":21,"path":"objects/oEntity/oEntity.yy",},
     {"name":"sTriangleGrip","order":1,"path":"sprites/sTriangleGrip/sTriangleGrip.yy",},
     {"name":"sPlayerWalk","order":24,"path":"sprites/sPlayerWalk/sPlayerWalk.yy",},
     {"name":"sDefaultLaser","order":1,"path":"sprites/sDefaultLaser/sDefaultLaser.yy",},
