@@ -5,12 +5,12 @@ if (instance_exists(oPlayer)) {
 	follow = oPlayer
 }
 else {
-	follow = noone
+	follow = noone;	
 }
 
 if ( follow == oPlayer ) {	
-	var Tox = follow.x + (mouse_x - follow.x)/6
-	var Toy = follow.y + (mouse_y - follow.y)/6
+	var Tox = follow.x + (mouse_x - follow.x)/7
+	var Toy = follow.y + (mouse_y - follow.y)/7
 
 	x = lerp(x, Tox, camera_speed)
 	y = lerp(y, Toy, camera_speed)

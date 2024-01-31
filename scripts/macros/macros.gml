@@ -7,7 +7,7 @@ enum MATERIAL {
 	ENERGY
 }
 
-
+#macro VIEW_CAMERA view_camera[0]
 
 
 // Map

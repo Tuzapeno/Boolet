@@ -4,16 +4,40 @@
 event_inherited();
 
 switch state {
-	case DRILL.OFF:
+	case DRILL.STANDBY:
+		mask_index = sNone;
+		if !alarm[0] alarm[0] = 60 * 5;
+		break;
+	
+	case DRILL.ARRIVING:
+		mask_index = sDrill;
+	
+		if place_meeting(x, z, oPlayer) {
+			apply_damage(oPlayer, [{damage: 9999, damage_color: c_white}])
+		}
+	
 		image_speed = 0;
 		image_index = 0;
+		
+		z_vsp += z_grav;
+		z_vsp = clamp(z_vsp, -z_max_vsp, z_max_vsp);
+		
+		z += z_vsp;
+		
+		if z >= y {
+			z = y;
+			state = DRILL.MINING;
+			screen_shake(20, 20);
+			clear_around(x, y, 2, false);
+		}
+		
 		break;
 	
 	case DRILL.MINING:
 		image_speed = 0.6;
 		
 		// Sparks
-		with( instance_create_depth(x, y+sprite_yoffset-1, depth-1, oParticle) ) {
+		with( instance_create_depth(x, y, depth-1, oParticle) ) {
 			debris = false;
 			sprite_index = sBulletSpark;
 			fric = 0.9;
@@ -25,16 +49,13 @@ switch state {
 		}
 		
 		//Wall Dust
-		if chance(0.05) {
-			with( instance_create_depth(x, y+sprite_yoffset-1, depth+1, oParticle) ) {
-				debris = true;
-				sprite_index = sWallDebris;
-				image_index = irandom_range(0, image_number-1);
-				fric = 0.9;
-				var dir = random(360);
-				image_angle = dir;
-				motion_add(dir, random_range(2, 5));
-			}
+		with( instance_create_depth(x, y, depth+1, oParticle) ) {
+			debris = false;
+			sprite_index = sWallDust;
+			fric = 0.95;
+			var dir = random(360);
+			image_angle = dir;
+			motion_add(dir, random_range(2, 5));
 		}
 		
 		if drill_time <= 0 {
@@ -44,7 +65,7 @@ switch state {
 		break;
 		
 	case DRILL.DONE: 
-		instance_create_depth(x, y+sprite_yoffset, depth, oHole);
+		instance_create_depth(x, y, depth, oHole);
 		instance_destroy();
 		break;
 }

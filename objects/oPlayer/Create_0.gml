@@ -2,16 +2,22 @@
 // You can write your code in this editor
 // Definição de variáveis para o inventário
 
-event_inherited()
+event_inherited();
 
 enum PLAYER {
+	ARRIVING,
 	IDLE,
 	MOVING,
 	ROLLING,
 	HIT
 }
 
-state = PLAYER.IDLE;
+z_vsp = 0;
+z_grav = 0.8;
+z_max_vsp = 10;
+z = camera_get_view_y(VIEW_CAMERA) - sprite_height;
+
+state = PLAYER.ARRIVING;
 
 var wpmanager = instance_create_depth(x, y, depth, oWeapon)
 

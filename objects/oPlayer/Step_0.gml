@@ -42,6 +42,23 @@ if ((left_key || right_key || up_key || down_key) && state == PLAYER.IDLE)
 
 
 switch state {	
+	case PLAYER.ARRIVING:
+		image_speed = 0;
+		image_index = 0;
+		
+		z_vsp += z_grav;
+		z_vsp = clamp(z_vsp, -z_max_vsp, z_max_vsp);
+		
+		z += z_vsp;
+		
+		if z >= y {
+			z = y;
+			state = PLAYER.IDLE;
+			screen_shake(5, 20);
+		}
+		break;
+	
+	
 	case PLAYER.MOVING:
 		hsp = ((right_key - left_key) * spd) * dt
 		vsp = ((down_key - up_key) * spd) * dt

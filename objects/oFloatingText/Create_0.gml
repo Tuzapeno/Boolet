@@ -6,7 +6,7 @@ spd = 1
 color = c_white
 xrange = 10
 
-lifespan = 30
+lifespan = 45;
 
 x += random_range(-xrange, xrange)
 

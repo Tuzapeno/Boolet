@@ -82,7 +82,7 @@ if (!instance_exists(oCamera)) {
 // Put drill
 clear_around(initial_x, initial_y)
 
-instance_create_layer(initial_x*TILESIZE, initial_y*TILESIZE, "Instances", oDrill)
+//instance_create_layer(initial_x*TILESIZE, initial_y*TILESIZE, "Instances", oDrill)
 
 #region add_instances
 

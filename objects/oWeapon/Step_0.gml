@@ -2,8 +2,15 @@
 
 if ( weapon == noone ) { exit }
 
-x = oPlayer.x + lengthdir_x(10, mouse_angle);
-y = oPlayer.y + lengthdir_y(10, mouse_angle);
+if oPlayer.state == PLAYER.ARRIVING {
+	x = oPlayer.x;
+	y = oPlayer.z;
+}
+else {
+	x = oPlayer.x + lengthdir_x(10, mouse_angle);
+	y = oPlayer.y + lengthdir_y(10, mouse_angle);
+}
+
 
 #region Reset position & angle
 

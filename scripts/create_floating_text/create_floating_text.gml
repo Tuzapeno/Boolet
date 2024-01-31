@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function create_floating_text(_text, _color){
-	with instance_create_depth(x, y, depth-1, oFloatingText) {
+	with instance_create_layer(x, y, "Control", oFloatingText) {
 		text = _text
 		color = _color
 	}

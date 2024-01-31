@@ -1,7 +1,8 @@
 /// @description 
 
 enum DRILL {
-	OFF,
+	STANDBY,
+	ARRIVING,
 	MINING,
 	DONE
 }
@@ -15,11 +16,17 @@ drill_cost = 20;
 contact_text = $"Start Drill? ({drill_cost} Energy)";
 drill_time = 60 * 5;
 
+z = 0;
+z_vsp = 0;
+z_grav = 0.5;
+z_max_vsp = 10;
 
-state = DRILL.OFF;
+
+
+state = DRILL.STANDBY;
 
 function interact() {
-	if state != DRILL.OFF return;
+	if state != DRILL.ARRIVING return;
 	if oPlayer.energy < drill_cost return;
 	
 	oPlayer.energy -= drill_cost;
