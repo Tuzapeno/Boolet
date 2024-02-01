@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Control",
-    "path": "folders/Objects/Control.yy",
+    "name": "Map Objects",
+    "path": "folders/Objects/Map Objects.yy",
   },
   "parentObjectId": {
     "name": "oInteractiveParent",
