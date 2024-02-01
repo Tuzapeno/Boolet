@@ -3,7 +3,7 @@
 
 event_inherited();
 
-player = oPlayer
+player = oPlayerParent
 player_in_range = collision_circle(x, y, detect_radius, player, false, false)
 
 state();

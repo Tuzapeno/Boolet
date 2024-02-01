@@ -4,7 +4,7 @@
 event_inherited();
 
 function material_add() {
-	if instance_exists(oPlayer)	{
-		oPlayer.energy++;			
+	if instance_exists(oPlayerParent)	{
+		oPlayerParent.energy++;			
 	}
 }

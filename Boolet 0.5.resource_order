@@ -66,6 +66,7 @@
     {"name":"sCeilDirt","order":23,"path":"sprites/sCeilDirt/sCeilDirt.yy",},
     {"name":"sDrill","order":23,"path":"sprites/sDrill/sDrill.yy",},
     {"name":"oEnemyChaser","order":6,"path":"objects/oEnemyChaser/oEnemyChaser.yy",},
+    {"name":"oPlayerParent","order":25,"path":"objects/oPlayerParent/oPlayerParent.yy",},
     {"name":"oDisplayController","order":4,"path":"objects/oDisplayController/oDisplayController.yy",},
     {"name":"create_wall_debris","order":2,"path":"scripts/create_wall_debris/create_wall_debris.yy",},
     {"name":"create_bullet_case","order":3,"path":"scripts/create_bullet_case/create_bullet_case.yy",},

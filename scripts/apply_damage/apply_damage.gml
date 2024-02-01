@@ -17,3 +17,12 @@ function apply_damage(_target, _damage_array) {
 		flash_alpha = 1;
 	}
 }
+
+function heal(_target, _amount) {
+	with _target {
+		
+		hp += _amount 
+		create_floating_text( string(_amount), c_green );
+		// vfx?
+	}
+}
