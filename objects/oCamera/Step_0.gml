@@ -1,14 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (instance_exists(oPlayer)) {
-	follow = oPlayer
+if (instance_exists(oPlayerParent)) {
+	follow = oPlayerParent
 }
 else {
 	follow = noone;	
 }
 
-if ( follow == oPlayer ) {	
+if ( follow == oPlayerParent ) {	
 	var Tox = follow.x + (mouse_x - follow.x)/7
 	var Toy = follow.y + (mouse_y - follow.y)/7
 

@@ -10,7 +10,7 @@ damage_array = []
 // Add weapon base damage
 array_push(damage_array, 
 {
-	damage: weapon_damage,
+	damage: 2,
 	damage_color: c_white
 })
 

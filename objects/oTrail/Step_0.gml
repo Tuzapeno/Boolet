@@ -1,9 +1,11 @@
 /// @description 
 
 if (image_alpha <= 0) instance_destroy();
-image_alpha-= 0.4;
 
+image_alpha-= 0.2;
 
+if instance_exists(owner) 
+	image_angle = owner.image_angle;
 
 
 

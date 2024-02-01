@@ -7,6 +7,15 @@ enum MATERIAL {
 	ENERGY
 }
 
+enum PLAYER {
+	P_ATTACK,
+	S_ATTACK,
+	ABILITY_1,
+	ABILITY_2,
+	ABILITY_3
+}
+
+
 #macro VIEW_CAMERA view_camera[0]
 
 

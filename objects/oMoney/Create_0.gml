@@ -6,7 +6,7 @@
 event_inherited();
 
 function material_add() {
-	if instance_exists(oPlayer)	{
-		oPlayer.money++;			
+	if instance_exists(oPlayerParent)	{
+		oPlayerParent.money++;			
 	}
 }

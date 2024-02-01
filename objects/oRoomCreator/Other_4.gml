@@ -66,13 +66,12 @@ ds_list_destroy(walker_list)
 // Put player 
 clear_around(initial_x + 1, initial_y + 1)
 
-if (instance_exists(oPlayer)) {
-	oPlayer.x = (initial_x + 1) * TILESIZE
-	oPlayer.y = (initial_y + 1) * TILESIZE
-	
+if (instance_exists(oPlayerParent)) {
+	oPlayerParent.x = (initial_x + 1) * TILESIZE
+	oPlayerParent.y = (initial_y + 1) * TILESIZE
 }
 else {
-	instance_create_layer((initial_x+1)*TILESIZE, (initial_x+1)*TILESIZE, "Instances", oPlayer)
+	instance_create_layer((initial_x+1)*TILESIZE, (initial_x+1)*TILESIZE, "Instances", oAverageJoe);
 }
 
 if (!instance_exists(oCamera)) {

@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2809e5f8-22e2-4c5c-8426-29b4a715f4fe","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 3,
   "parent": {
     "name": "Bullets",
     "path": "folders/Sprites/Weapons/Bullets.yy",
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 4,
+    "xorigin": 0,
     "yorigin": 4,
   },
   "swatchColours": null,
