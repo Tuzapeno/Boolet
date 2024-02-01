@@ -4,14 +4,6 @@
 
 event_inherited();
 
-enum PLAYER {
-	ARRIVING,
-	IDLE,
-	MOVING,
-	ROLLING,
-	HIT
-}
-
 z_vsp = 0;
 z_grav = 0.8;
 z_max_vsp = 10;
@@ -19,20 +11,10 @@ z = camera_get_view_y(VIEW_CAMERA) - sprite_height;
 
 state = player_state_arriving;
 
-var wpmanager = instance_create_depth(x, y, depth, oWeapon)
 
-instance_create_depth(x, y, depth, oAK47)
-instance_create_depth(x, y, depth, oColt)
-instance_create_depth(x, y, depth, oShotgun)
-instance_create_depth(x, y, depth, oSmg)
-instance_create_depth(x, y, depth, oMinigun)
-
-inventory = array_create(2);
-inventory[0] = global.weapons.guns.ak47;
-inventory[1] = global.weapons.guns.shortbarrel;
-current_weapon_index = 0;
-
-wpmanager.weapon = inventory[0]
+with instance_create_depth(x, y, depth-1, oJoeColt) {
+	owner = other.id;	
+}
 
 // Keys
 
@@ -50,6 +32,8 @@ image_speed = 0.3;
 base_spd = 3;
 spd = base_spd;
 
+base_damage = 5;
+
 mouse_direction = 0;
 player_direction = 0;
 
@@ -59,32 +43,29 @@ material_grab_radius = 50;
 
 dash_spd = 0;
 dash_time = immunity_frames;
-
-
 dash_curve_pos = 0;
 dash_curve_spd = 0.05;
 
-function switch_weapon(new_weapon) {
-	var create = false
-	
-	
-	if ( oWeapon.weapon != noone ) {
-		var obj = oWeapon.weapon.obj
-		create = true
-	}
-	
-	if ( array_contains(inventory, noone) ) {
-		inventory[array_get_index(inventory, noone)] = new_weapon
-		create = false
-	} 
-	else {
-		inventory[current_weapon_index] = new_weapon
-		create = true
-	}
-	
-    oWeapon.weapon = inventory[current_weapon_index];
-	
-	if ( create ) {instance_create_depth(x, y, depth, obj)}
+pa_cooldown = 0;
+sa_cooldown = 60 * 3;
+a1_cooldown = 60 * 5;
+a2_cooldown = 0;
+a3_cooldown = 0;
+
+cooldown = array_create(5, 0);
+
+// Joe fires his pistol
+function primary_attack() {} // Uses weapon;
+
+// Throws a boomerang
+function secondary_attack() {
+	instance_create_depth(x, y, depth, oJoeBoomerang)	
 }
 
+// Heals for 20% of life
+function ability_1() {
+	hp += max_hp * 0.20;
+}
 
+function ability_2() {}
+function ability_3() {}

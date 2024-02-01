@@ -1,8 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function create_bullet_case(_amount) {
-	var _spr = weapon.ammo[bullet_index].bullet_case
-	
+function create_bullet_case(_spr, _amount) {
 	repeat(_amount) {
 		with( instance_create_depth(x, y, depth+1, oParticle) ) {
 			debris = true

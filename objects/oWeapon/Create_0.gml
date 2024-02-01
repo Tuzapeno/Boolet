@@ -1,22 +1,32 @@
-///@desc variables
+/// @description 
 
-mouse_angle = 0
-knockback_angle = 0
+owner = noone;
+cooldown_max = 0;
+cooldown = 0;
+shoot_key = false;
+automatic = false;
+mouse_dir = 0;
+	
+function shoot() { }
+	
 
-player = oPlayer
-ox = player.x 
-oy = player.y
 
-weapon = global.weapons.guns.ak47
 
-canshoot = 0; // Shooting timer
-bullet_index = 0; // Current bullet
 
-// Modifiers
-real_innaccuracy = 0
-real_kick = 0
 
-real_damage = weapon.damage
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

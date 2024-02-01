@@ -15,8 +15,4 @@ draw_text(70, 85, $"{energy}")
 
 draw_text(10, 60, $"LEVEL {global.level}-{global.sublevel}")
 
-if( instance_number(oEnemyParent_class) <= 0 && global.game_started) {
-	draw_set_font(fGUI)
-	draw_text_outline(halfx - 60, 20, c_black, c_white, $"Go deeper? (H)")
-	draw_set_font(fDefault)
-}
+draw_text(halfx, 30, $"HP: {hp}/{max_hp}");

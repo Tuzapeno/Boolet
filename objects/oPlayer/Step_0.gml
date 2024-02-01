@@ -14,6 +14,29 @@ interact_key = keyboard_check(ord("E"));
 
 mouse_direction = point_direction(x, y, mouse_x, mouse_y);
 
+ability_1_key = keyboard_check_pressed(ord("Q"));
+
+
+for (var i = 0; i < array_length(cooldown) - 1; ++i) {
+    if cooldown[i] > 0 then cooldown[i]--;
+}
+
+if mouse_check_button(mb_left) && cooldown[PLAYER.P_ATTACK] <= 0 {
+	primary_attack();
+	cooldown[PLAYER.P_ATTACK] = pa_cooldown;
+}
+
+if mouse_check_button(mb_right) && cooldown[PLAYER.S_ATTACK] <= 0 {
+	secondary_attack();
+	cooldown[PLAYER.S_ATTACK] = sa_cooldown;
+}
+
+if ability_1_key && cooldown[PLAYER.ABILITY_1] <= 0 {
+	ability_1();
+	cooldown[PLAYER.ABILITY_1] = a1_cooldown;
+}
+
+
 if hsp != 0 || vsp != 0 { 
 	player_direction = point_direction(0, 0, hsp, vsp);
 }
