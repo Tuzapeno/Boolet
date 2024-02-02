@@ -17,7 +17,7 @@ with instance_create_depth(x, y, depth-1, oJoeColt) {
 base_atk_spd = 0.5;
 atk_spd = base_atk_spd;
 
-base_spd = 1;
+base_spd = 2;
 spd = base_spd;
 base_damage = 5;
 
@@ -55,7 +55,7 @@ function ability_1() {
 
 // Workaholic
 function state_workaholic() {
-	wp_time = base_wp_time / 2;
+	wp_time = base_wp_time / 4;
 	hsp = 0;
 	vsp = 0;
 	

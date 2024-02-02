@@ -30,13 +30,14 @@ if mouse_check_button(mb_right) && cooldown[PLAYER.S_ATTACK] <= 0 {
 	cooldown[PLAYER.S_ATTACK] = sa_cooldown;
 }
 
-if ability_1_key && cooldown[PLAYER.ABILITY_1] <= 0 {
+if ability_1_key && cooldown[PLAYER.ABILITY_1] <= 0 && !global.coffe_time {
 	ability_1();
 	cooldown[PLAYER.ABILITY_1] = a1_cooldown;
 }
 
 if ability_2_key && !global.coffe_time {
 	state = state_workaholic;
+	alarm[0] = 1;
 }
 
 if ability_3_key {

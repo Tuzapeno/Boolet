@@ -77,6 +77,7 @@
     {"id":{"name":"apply_damage","path":"scripts/apply_damage/apply_damage.yy",},},
     {"id":{"name":"acRecoil","path":"animcurves/acRecoil/acRecoil.yy",},},
     {"id":{"name":"oEnemyMark","path":"objects/oEnemyMark/oEnemyMark.yy",},},
+    {"id":{"name":"sEmailPlus","path":"sprites/sEmailPlus/sEmailPlus.yy",},},
     {"id":{"name":"sEnemyDebris","path":"sprites/sEnemyDebris/sEnemyDebris.yy",},},
     {"id":{"name":"oAverageJoe","path":"objects/oAverageJoe/oAverageJoe.yy",},},
     {"id":{"name":"sMoneyHUD","path":"sprites/sMoneyHUD/sMoneyHUD.yy",},},
