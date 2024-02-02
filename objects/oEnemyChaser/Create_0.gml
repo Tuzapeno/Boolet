@@ -16,6 +16,7 @@ vsp = 0
 contact_damage = 2
 detect_radius = 200
 state = chaser_state_idle;
+base_state = chaser_state_idle;
 
 dir = 0
 

@@ -17,6 +17,7 @@ enum PLAYER {
 
 
 #macro VIEW_CAMERA view_camera[0]
+#macro FRAME_RATE game_get_speed(gamespeed_fps)
 
 
 // Map

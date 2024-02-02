@@ -6,6 +6,7 @@ event_inherited();
 collision_id = noone
 flash_alpha = 1;
 
+
 function die() {
 	create_material(MATERIAL.MONEY, irandom_range(1,3))
 	

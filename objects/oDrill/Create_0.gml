@@ -7,7 +7,7 @@ event_inherited();
 
 drill_cost = 20;
 contact_text = $"Start Drill? ({drill_cost} Energy)";
-drill_time = 60 * 5;
+drill_time = FRAME_RATE * 5;
 
 z = 0;
 z_vsp = 0;
