@@ -41,7 +41,6 @@ if ability_1_key && cooldown[SKILL.ABILITY1].cvalue <= 0 && !global.coffe_time {
 
 if ability_2_key && !global.coffe_time {
 	state = state_workaholic;
-	alarm[0] = 1;
 }
 
 if ability_3_key && cooldown[SKILL.ABILITY3].cvalue <= 0 {

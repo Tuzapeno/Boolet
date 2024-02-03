@@ -44,8 +44,6 @@ cooldown_step = 1;
 
 skills_surface = noone;
 
-instance_create_depth(x, y, depth, oTextbox);
-
 // Pistol fire d(100%) 
 function primary_attack() {} // Uses weapon;
 
