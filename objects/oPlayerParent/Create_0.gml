@@ -40,18 +40,9 @@ money = 0;
 energy = 0;
 material_grab_radius = 50;
 
-dash_spd = 0;
-dash_time = immunity_frames;
 dash_curve_pos = 0;
 dash_curve_spd = 0.05;
 
-pa_cooldown = 0;
-sa_cooldown = 0;
-a1_cooldown = 0;
-a2_cooldown = 0;
-a3_cooldown = 0;
-
-cooldown = array_create(5, 0);
 
 function primary_attack() {} 
 function secondary_attack() {}

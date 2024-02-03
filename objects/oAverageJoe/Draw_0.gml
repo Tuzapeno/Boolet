@@ -16,3 +16,4 @@ if global.coffe_time {
 if state == state_workaholic {
 	draw_self_outline(c_blue);	
 }
+

@@ -16,23 +16,27 @@ ability_2_key = keyboard_check(ord("F"));
 ability_3_key = keyboard_check_pressed(ord("R"));
 
 
+// Cooldown for skills
 for (var i = 0; i < array_length(cooldown) - 1; ++i) {
-    if cooldown[i] > 0 then cooldown[i]--;
+    if cooldown[i].cvalue > 0 then cooldown[i].cvalue -= cooldown_step;
 }
 
-if mouse_check_button(mb_left) && cooldown[PLAYER.P_ATTACK] <= 0 {
+// Cooldown for ultimate
+if cooldown[SKILL.ABILITY3].cvalue > 0 then cooldown[SKILL.ABILITY3].cvalue--;
+
+if mouse_check_button(mb_left) && cooldown[SKILL.PRIMARY].cvalue <= 0 {
 	primary_attack();
-	cooldown[PLAYER.P_ATTACK] = pa_cooldown;
+	cooldown[SKILL.PRIMARY].cvalue = cooldown[SKILL.PRIMARY].cmax;
 }
 
-if mouse_check_button(mb_right) && cooldown[PLAYER.S_ATTACK] <= 0 {
+if mouse_check_button(mb_right) && cooldown[SKILL.SECONDARY].cvalue <= 0 {
 	secondary_attack();
-	cooldown[PLAYER.S_ATTACK] = sa_cooldown;
+	cooldown[SKILL.SECONDARY].cvalue = cooldown[SKILL.SECONDARY].cmax;
 }
 
-if ability_1_key && cooldown[PLAYER.ABILITY_1] <= 0 && !global.coffe_time {
+if ability_1_key && cooldown[SKILL.ABILITY1].cvalue <= 0 && !global.coffe_time {
 	ability_1();
-	cooldown[PLAYER.ABILITY_1] = a1_cooldown;
+	cooldown[SKILL.ABILITY1].cvalue = cooldown[SKILL.ABILITY1].cmax;
 }
 
 if ability_2_key && !global.coffe_time {
@@ -40,11 +44,10 @@ if ability_2_key && !global.coffe_time {
 	alarm[0] = 1;
 }
 
-if ability_3_key {
+if ability_3_key && cooldown[SKILL.ABILITY3].cvalue <= 0 {
 	ability_3();
-	cooldown[PLAYER.ABILITY_3] = a3_cooldown;
+	cooldown[SKILL.ABILITY3].cvalue = cooldown[SKILL.ABILITY3].cmax;
 }
-	
 
 // Generate work points
 if !alarm[0] then alarm[0] = wp_time
@@ -92,7 +95,3 @@ if ( place_meeting(x, y + vsp, oSolid) ) {
 
 x += hsp;
 y += vsp;
-
-show_debug_message($"Sprite: {sprite_get_name(sprite_index)}");
-
-
