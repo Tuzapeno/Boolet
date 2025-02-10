@@ -28,11 +28,11 @@ with instance_create_depth(x, y, depth-1, oJoeColt) {
 	global.coffe_time = 0;
 
 cooldown = [
-{cvalue: 0, cmax: 0, sprite: sSkillPlaceholder},
-{cvalue: 0, cmax: 0, sprite: sJoeSS},
-{cvalue: 0, cmax: 0, sprite: sJoeAB1},
-{cvalue: 0, cmax: 0, sprite: sJoeAB2},
-{cvalue: 0, cmax: 0, sprite: sSkillPlaceholder}
+{cvalue: 0, cmax: 0, sprite: sNone},
+{cvalue: 0, cmax: 0, sprite: sNone},
+{cvalue: 0, cmax: 0, sprite: sNone},
+{cvalue: 0, cmax: 0, sprite: sNone},
+{cvalue: 0, cmax: 0, sprite: sNone}
 ];
 
 cooldown[SKILL.PRIMARY].cmax = FRAME_RATE * atk_spd;
